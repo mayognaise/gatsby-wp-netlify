@@ -1,0 +1,15 @@
+// variables
+// https://github.com/twbs/bootstrap/blob/ed32ee2e78b4de244d54e1393ba0e4f6941a72bf/scss/_variables.scss
+
+// color
+$blue: #0000ff;
+$pink: #b10051;
+
+@import '~bootstrap/scss/bootstrap';
+
+// .nav-link
+// https://github.com/twbs/bootstrap/blob/6f4784c8bb9004d5ece284fde1652b0d7706937e/site/assets/scss/_navbar.scss
+.navbar-light .navbar-nav .nav-link {
+  // https://github.com/twbs/bootstrap/blob/6f4784c8bb9004d5ece284fde1652b0d7706937e/site/assets/scss/_navbar.scss#L22
+  color: inherit;
+}

@@ -1,17 +1,6 @@
-:root {
-  --blue: #0000ff;
-  --pink: #b10051;
-}
-
-.btn-primary {
-  background-color: var(--blue);
-  border-color: var(--blue);
-}
-
-a {
-  color: var(--blue);
-}
-
-code {
-  color: var(--pink);
+// antialiasing
+// https://devhints.io/css-antialias
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
