@@ -2,25 +2,29 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import SEO from '../components/SEO';
 import React from 'react';
+import { graphql } from 'gatsby';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 
 interface Props {
-  pageResources: {
-    json: {
-      pageContext: {
+  data: {
+    markdownRemark: {
+      html: string;
+      frontmatter: {
         title: string;
-        html: string;
         image: string;
         date: string;
-        keywords: string;
+        keywords?: string;
       };
     };
   };
 }
 
 const PostLayout = (props: Props) => {
-  const { title, html, image, date, keywords } = props.pageResources.json.pageContext;
+  const {
+    html,
+    frontmatter: { title, image, date, keywords },
+  } = props.data.markdownRemark;
   return (
     <div>
       <SEO title={title} description={html} image={image} keywords={keywords} />
@@ -33,6 +37,11 @@ const PostLayout = (props: Props) => {
           <p>
             <small>{date}</small>
           </p>
+          {keywords && (
+            <p>
+              <small>{keywords}</small>
+            </p>
+          )}
         </Container>
       </main>
       <Footer />
@@ -41,3 +50,17 @@ const PostLayout = (props: Props) => {
 };
 
 export default PostLayout;
+
+export const query = graphql`
+  query MarkdownReparkPost($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
+        image
+        date
+        keywords
+      }
+    }
+  }
+`;
