@@ -32,6 +32,7 @@ const SEO = ({ title, description, keywords, image }: Props) => (
       },
     }) => (
       <Helmet>
+        <html lang="en" />
         <meta charSet="utf-8" />
         <meta
           name="image"

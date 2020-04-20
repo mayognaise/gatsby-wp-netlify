@@ -15,7 +15,7 @@ const Post = ({ title, excerpt, image, slug }: Props) => {
   return (
     <div className={classNames(postStyles.post, '')}>
       <Card>
-        <Card.Img variant="top" src={image} />
+        <Card.Img variant="top" src={image} alt={title} />
         <Card.Body>
           <Card.Title dangerouslySetInnerHTML={{ __html: title }} />
           <Card.Text dangerouslySetInnerHTML={{ __html: excerpt }} />

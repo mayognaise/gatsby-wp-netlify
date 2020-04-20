@@ -12,24 +12,32 @@ interface Props {
     wordpressPost: {
       title: string;
       excerpt: string;
-      image: string;
       content: string;
       date: string;
+      featured_media: {
+        source_url: string;
+      };
     };
   };
 }
 
 const BlogLayout = (props: Props) => {
-  const { title, image, content, date, excerpt } = props.data.wordpressPost;
+  const {
+    title,
+    featured_media: { source_url: image },
+    content,
+    date,
+    excerpt,
+  } = props.data.wordpressPost;
   return (
     <div>
       <SEO title={innertext(title)} description={innertext(excerpt)} image={image} />
       <Header />
       <main className="pt-5">
         <Container>
-          <Image src={image} fluid />
+          <Image src={image} fluid alt={title} />
           <h2 dangerouslySetInnerHTML={{ __html: title }} />
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <div dangerouslySetInnerHTML={{ __html: content.replace(/alt=""/g, 'alt="wp-image"') }} />
           <p>
             <small>{date}</small>
           </p>
@@ -49,6 +57,9 @@ export const query = graphql`
       title
       date
       excerpt
+      featured_media {
+        source_url
+      }
     }
   }
 `;

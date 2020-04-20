@@ -31,7 +31,7 @@ const PostLayout = (props: Props) => {
       <Header />
       <main className="pt-5">
         <Container>
-          <Image src={image} fluid />
+          <Image src={image} fluid alt={title} />
           <h2 dangerouslySetInnerHTML={{ __html: title }} />
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <p>
