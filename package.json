@@ -26,6 +26,8 @@
     "bootstrap": "4.4.1",
     "classnames": "2.2.6",
     "gatsby": "2.15.12",
+    "gatsby-plugin-manifest": "2.3.5",
+    "gatsby-plugin-offline": "3.1.4",
     "gatsby-plugin-react-helmet": "3.2.4",
     "gatsby-plugin-sass": "2.1.14",
     "gatsby-plugin-typescript": "2.1.7",
