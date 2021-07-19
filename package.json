@@ -32,7 +32,7 @@
     "gatsby-plugin-sass": "2.1.14",
     "gatsby-plugin-typescript": "2.1.7",
     "gatsby-source-filesystem": "2.2.4",
-    "gatsby-source-wordpress": "3.2.5",
+    "gatsby-source-wordpress": "4.0.8",
     "gatsby-transformer-remark": "2.7.3",
     "innertext": "1.0.3",
     "install": "0.13.0",
